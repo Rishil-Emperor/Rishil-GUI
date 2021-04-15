@@ -39,3 +39,19 @@ days_of_the_week = {                                                            
 today_day_of_week = days_of_the_week[str(today_date.weekday())]                                                         # Assigning current day of the week from 'days_of_the_week' dictionary to variable 'today_day_of_week'.
 
 print(f'Hello Rishil. It is {today_day_of_week}, {today_month} {today_day}, {today_year}.')
+
+if month > 4 or today_month == 4 and today_day > 25:                                                                    # If my birthday has already passed this year...
+    birthday_year = today_year + 1                                                                                      # birthday_year will be set for next year.
+else:                                                                                                                   # If my birthday has not passed this year...
+    birthday_year = today_year                                                                                          # birthday_year will be set for this year.
+
+birthday = datetime.date(birthday_year, 4, 25)                                                                          # Set my birthday as April 25th, birthday_year as a variable called birthday.
+days_until_birthday = birthday - today_date                                                                             # days_until_birthday is how many days are left from the current day until my birthday.
+untilBirthday = ''                                                                                                      # Creates a new variable called untilBirthday which is set as an empty string for now.
+for x in str(days_until_birthday):                                                                                      # Iterating through days_until_birthday to get it to only show number of days and nothing else.
+    if x == ',':
+        break
+    else:
+        untilBirthday += x                                                                                              # untilBirthday is updated to show only number of days left.
+
+print(birthday, untilBirthday)
