@@ -46,13 +46,8 @@ else:                                                                           
     birthday_year = today_year                                                                                          # birthday_year will be set for this year.
 
 birthday = datetime.date(birthday_year, 4, 25)                                                                          # Set my birthday as April 25th, birthday_year as a variable called birthday.
-days_until_birthday = birthday - today_date                                                                             # days_until_birthday is how many days are left from the current day until my birthday.
-untilBirthday = ''                                                                                                      # Creates a new variable called untilBirthday which is set as an empty string for now.
-for x in str(days_until_birthday):                                                                                      # Iterating through days_until_birthday to get it to only show number of days and nothing else.
-    if x == ',':
-        break
-    else:
-        untilBirthday += x                                                                                              # untilBirthday variable is updated to show only number of days left.
+days_until_birthday = birthday - today_date                                                                             # days_until_birthday is a timedelta showing current day to birthday.
+untilBirthday = days_until_birthday.days                                                                                # untilBirthday is a variable showing number of days left from the current day to my birthday.
 
 if month == 12 and today_day > 25:                                                                                      # If Christmas has already passed this year...
     christmas_year = today_year + 1                                                                                     # christmas_year will be set for next year.
@@ -60,10 +55,5 @@ else:                                                                           
     christmas_year = today_year                                                                                         # christmas_year will be set for this year.
 
 christmas = datetime.date(christmas_year, 12, 25)                                                                       # Set Christmas as December 25th, christmas_year as a variable called christmas.
-days_until_christmas = christmas - today_date                                                                           # days_until_christmas are how many days are left from the current day until Christmas.
-untilChristmas = ''                                                                                                     # Creates a new variable called untilChristmas which is set as an empty string for now.
-for x in str(days_until_christmas):                                                                                     # Iterating through days_until_christmas to get it to only show number of days and nothing else.
-    if x == ',':
-        break
-    else:
-        untilChristmas += x                                                                                             # untilChristmas variable is updated to show only number of days left.
+days_until_christmas = christmas - today_date                                                                           # days_until_christmas is a timedelta showing current day to Christmas.
+untilChristmas = days_until_christmas.days                                                                              # untilChristmas is a variable showing number of days left from the current day to Christmas.
